@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.abc.dao.UserDAO">
+    <resultMap id="user" type="com.abc.domain.User">
+        <id column="user_id" property="userId" />
+        <result column="user_name" property="userName"/>
+        <result column="user_password" property="userPassword"/>
+        <result column="user_phone" property="userPhone"/>
+        <result column="user_group" property="userGroup"/>
+        <result column="user_department" property="userDepartment"/>
+        <result column="user_uuid" property="userUUID"/>
+        <result column="create_time" property="createTime"/>
+        <result column="create_user" property="createUser"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="update_user" property="updateUser"/>
+    </resultMap>
+
+    <select id="findAllUser" resultMap="user">
+        select * from abc_user
+    </select>
+
+
+</mapper>
