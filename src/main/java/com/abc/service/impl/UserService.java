@@ -1,5 +1,6 @@
 package com.abc.service.impl;
 
+import com.abc.annotation.ArgsVerify;
 import com.abc.dao.UserDAO;
 import com.abc.domain.User;
 import com.abc.service.IUserService;
@@ -24,5 +25,11 @@ public class UserService implements IUserService {
     @Transactional(readOnly=true,propagation= Propagation.SUPPORTS)
     public List<User> allUser() {
         return userDAO.findAllUser();
+    }
+
+    @Override
+    @ArgsVerify(checkClasss = User.class,propertyNames = "userId")
+    public void userTest(User user) {
+        System.out.println("切面完成");
     }
 }

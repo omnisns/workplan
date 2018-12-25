@@ -1,6 +1,8 @@
 package com.abc.service;
 
+import com.abc.annotation.ArgsVerify;
 import com.abc.domain.User;
+import org.aspectj.lang.annotation.Around;
 
 import java.util.List;
 
@@ -14,4 +16,10 @@ public interface IUserService {
      * @return 所有用户
      */
     List<User> allUser();
+
+    /**
+     * 注解测试
+     * @param user
+     */
+    void userTest(User user);
 }
